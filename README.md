@@ -1,3 +1,3 @@
 # Projet_Leyvmaso
 
-Simplifié l'utilisation de maria DB
+Simplifier l'utilisation de maria DB

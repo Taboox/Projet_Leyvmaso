@@ -66,7 +66,7 @@ let mongoDb = require("mongodb").MongoClient;
     password: "7zip5kiz",
 });*/
 
-mongoDb.connect("mongodb://obiwan2.univ-brest.fr:27017/leyvmaso", function(err, db){
+mongoDb.connect("mongodb://obiwan2.univ-brest.fr:27017/LEYVMASO_MONGO", function(err, db){
   if (err) throw err;
   console.log("Database created!");
   db.close();
@@ -75,13 +75,12 @@ mongoDb.connect("mongodb://obiwan2.univ-brest.fr:27017/leyvmaso", function(err, 
 class CRUD_Mongo {
 
     create(requete) {
-	mongoDb.connect("mongodb://obiwan2.univ-brest.fr:27017/leyvamso", function(err, db){
+	mongoDb.connect("mongodb://obiwan2.univ-brest.fr:27017/LEYVMASO_MONGO", function(err, db){
 	  if (err) throw err;
 	  let dbo = db.db("leyvmaso");
-	  dbo.collection("").insertMany(requete, function(err, res) {
+	  dbo.collection("cours").insertMany(requete, function(err, res) {
 		    if (err) throw err;
 		    console.log("Number of documents inserted: " + res.insertedCount);
-		    db.close();
 	  });
 	  db.close();
 	});
